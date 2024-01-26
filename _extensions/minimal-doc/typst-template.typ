@@ -12,7 +12,7 @@
   lang: "en",
   region: "UK",
   font: (),
-  fontsize: 11pt,
+  fontsize: 10pt,
   sectionnumbering: none,
   toc: false,
   doc,
@@ -73,31 +73,22 @@
   set heading(numbering: sectionnumbering)
 
   if title != none {
-    align(center)[#block(inset: 2em)[
+    align(center)[#block(inset: 1em)[
       #text(weight: "bold", size: 1.5em)[#title]
     ]]
   }
 
   if authors != none {
-    let count = authors.len()
-    let ncols = calc.min(count, 3)
-    grid(
-      columns: (1fr,) * ncols,
-      row-gutter: 1.5em,
-      ..authors.map(author =>
-          align(center)[
-            #author.name \
-            #author.affiliation \
-            #author.email
-          ]
-      )
-    )
+    let list_authors = ()
+    for author in authors {
+      list_authors.push(author.name)
+    }
+    list_authors = list_authors.join(", ", last: " and ")
+    align(center)[#list_authors]
   }
 
   if date != none {
-    align(center)[#block(inset: 1em)[
-      #date
-    ]]
+    align(center)[#date]
   }
 
   if abstract != none {
@@ -114,6 +105,8 @@
     );
     ]
   }
+
+  v(0.25em)
 
   if cols == 1 {
     doc
