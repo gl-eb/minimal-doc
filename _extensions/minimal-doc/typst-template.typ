@@ -1,5 +1,6 @@
 #let minimal(
   title: none,
+  subtitle: none,
   authors: none,
   date: none,
   abstract: none,
@@ -76,6 +77,12 @@
     align(center)[#block(inset: 1em)[
       #text(weight: "bold", size: 1.5em)[#title]
     ]]
+  }
+
+  if subtitle != none {
+    align(center)[
+      #text(weight: "bold", size: 1.25em)[#subtitle]
+    ]
   }
 
   if authors != none {
