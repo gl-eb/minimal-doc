@@ -1,20 +1,11 @@
-
-// This is an example typst template (based on the default template that ships
-// with Quarto). It defines a typst function named 'article' which provides
-// various customization options. This function is called from the
-// 'typst-show.typ' file (which maps Pandoc metadata function arguments)
-//
-// If you are creating or packaging a custom typst template you will likely
-// want to replace this file and 'typst-show.typ' entirely. You can find
-// documentation on creating typst templates and some examples here:
-//   - https://typst.app/docs/tutorial/making-a-template/
-//   - https://github.com/typst/templates
-
 #let minimal(
   title: none,
   authors: none,
   date: none,
   abstract: none,
+  version: none,
+  header: none,
+  authorsinheader: false,
   cols: 1,
   margin: (x: 20mm, top: 20mm, bottom: 30mm),
   paper: "a4",
@@ -26,10 +17,53 @@
   toc: false,
   doc,
 ) = {
+  // if header is unset so far, start assembling it
+  if header == none {
+    // if title is specified, add it to the header
+    if title != none {
+      header = title
+    }
+
+    // if a version unmber is specified, add it to the header
+    if version != none {
+      if header != none {
+        header = header + " v" + version
+      } else {
+        header = version
+      }
+    }
+
+    // if authors are specified, add them to the header
+    if authors != none and authorsinheader == true {
+      let by_author = authors.first().name
+      if authors.len() > 1 {
+        by_author = by_author + " et al."
+      }
+      if header != none {
+        header = header + " by " + by_author
+      } else {
+        header = " by " + by_author
+      }
+    }
+
+    // if date is specified, add it to the header
+    if date != none {
+      if header != none {
+        header = header + " – " + datetime.today().display()
+      } else {
+        header = datetime.today().display()
+      }
+    }
+  }
+
   set page(
     paper: paper,
     margin: margin,
     numbering: "1",
+    header: align(right)[
+      #set text(9pt)
+      #header
+    ]
   )
   set par(justify: true)
   set text(lang: lang,
