@@ -50,6 +50,12 @@
     // if date is specified, add it to the header
     if date != none {
       if header != none {
+        header = header + " – " + date
+      } else {
+        header = date
+      }
+    } else {
+      if header != none {
         header = header + " – " + datetime.today().display()
       } else {
         header = datetime.today().display()
@@ -64,6 +70,7 @@
     header: align(right)[
       #set text(9pt)
       #header
+      // #line(length: 100%)
     ]
   )
   set par(justify: true)
