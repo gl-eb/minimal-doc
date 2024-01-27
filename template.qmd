@@ -3,7 +3,7 @@ title: A Minimal Document Template
 subtitle: "v{{< meta version >}}"
 authors: Gleb Ebert
 date: today
-version: 0.1.0
+version: 0.1.1
 lang: en
 
 format:
