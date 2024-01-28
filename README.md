@@ -6,6 +6,8 @@ This template gets rid of much of the white space that you find in most title bl
 Thus more text fits on one page.
 It also features a header that includes identifying information of the document.
 
+[See an example document here](template.pdf)
+
 ## Installation
 
 ### Creating a New Project
