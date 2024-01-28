@@ -2,9 +2,9 @@
 
 ## Introduction
 
-This example file that demonstrates the formatting and features of the minimal document template.
-In particular this template values putting more content on each page.
-It also features a header on each page.
+This template gets rid of much of the white space that you find in most title blocks, reduces page margins and uses a smaller default font size of 10pt.
+Thus more text fits on one page.
+It also features a header that includes identifying information of the document.
 
 ## Installation
 
