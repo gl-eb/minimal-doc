@@ -43,7 +43,7 @@
       if header != none {
         header = header + " by " + by_author
       } else {
-        header = " by " + by_author
+        header = by_author
       }
     }
 
