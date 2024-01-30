@@ -6,6 +6,7 @@
   abstract: none,
   version: none,
   header: none,
+  titleinheader: true,
   authorsinheader: false,
   cols: 1,
   margin: (x: 20mm, top: 20mm, bottom: 30mm),
@@ -21,7 +22,7 @@
   // if header is unset so far, start assembling it
   if header == none {
     // if title is specified, add it to the header
-    if title != none {
+    if title != none and titleinheader == true {
       header = title
     }
 

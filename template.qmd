@@ -9,6 +9,7 @@ lang: en
 
 format:
   minimal-doc-typst:
+    titleinheader: false
     authorsinheader: true
     margin:
       x: 20mm

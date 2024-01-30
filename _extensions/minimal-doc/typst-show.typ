@@ -38,6 +38,9 @@ $endif$
 $if(header)$
   header: "$header$",
 $endif$
+$if(titleinheader)$
+  titleinheader: $titleinheader$,
+$endif$
 $if(authorsinheader)$
   authorsinheader: $authorsinheader$,
 $endif$
