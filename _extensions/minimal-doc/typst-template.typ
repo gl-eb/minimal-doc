@@ -84,43 +84,43 @@
     align(center)[#block(inset: 1em)[
       #text(weight: "bold", size: 1.5em)[#title]
     ]]
-  }
 
-  if subtitle != none {
-    align(center)[
-      #text(weight: "bold", size: 1.25em)[#subtitle]
-    ]
-  }
-
-  if authors != none {
-    let list_authors = ()
-    for author in authors {
-      list_authors.push(author.name)
+    if subtitle != none {
+      align(center)[
+        #text(weight: "bold", size: 1.25em)[#subtitle]
+      ]
     }
-    list_authors = list_authors.join(", ", last: " and ")
-    align(center)[#list_authors]
-  }
 
-  if date != none {
-    align(center)[#date]
-  }
+    if authors != none {
+      let list_authors = ()
+      for author in authors {
+        list_authors.push(author.name)
+      }
+      list_authors = list_authors.join(", ", last: " and ")
+      align(center)[#list_authors]
+    }
 
-  if abstract != none {
-    block(inset: 2em)[
-    #text(weight: "semibold")[Abstract] #h(1em) #abstract
-    ]
-  }
+    if date != none {
+      align(center)[#date]
+    }
 
-  if toc {
-    block(above: 0em, below: 2em)[
-    #outline(
-      title: auto,
-      depth: none
-    );
-    ]
-  }
+    if abstract != none {
+      block(inset: 2em)[
+      #text(weight: "semibold")[Abstract] #h(1em) #abstract
+      ]
+    }
 
-  v(0.25em)
+    if toc {
+      block(above: 0em, below: 2em)[
+      #outline(
+        title: auto,
+        depth: none
+      );
+      ]
+    }
+
+    v(0.25em)
+  }
 
   if cols == 1 {
     doc
