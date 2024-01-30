@@ -30,7 +30,7 @@
       if header != none {
         header = header + " v" + version
       } else {
-        header = version
+        header = "v" + version
       }
     }
 
