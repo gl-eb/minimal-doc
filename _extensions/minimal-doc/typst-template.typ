@@ -22,7 +22,7 @@
   // if header is unset so far, start assembling it
   if header == none {
     // if title is specified, add it to the header
-    if title != none and titleinheader == true {
+    if title != none and titleinheader {
       header = title
     }
 
@@ -36,7 +36,7 @@
     }
 
     // if authors are specified, add them to the header
-    if authors != none and authorsinheader == true {
+    if authors != none and authorsinheader {
       let by_author = authors.first().name
       if authors.len() > 1 {
         by_author = by_author + " et al."
