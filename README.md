@@ -15,7 +15,7 @@ It also features a header that includes identifying information of the document.
 You can use this Minimal Document template to start a new project by running the following command in the terminal:
 
 ```bash
-quarto use template gl-eb/minimal-document
+quarto use template gl-eb/minimal-doc
 ```
 
 ### Using the Template in an Existing Project
@@ -23,5 +23,5 @@ quarto use template gl-eb/minimal-document
 You can install this Minimal Document template into an existing project by running the following command in the terminal:
 
 ```bash
-quarto add extension gl-eb/minimal-document
+quarto add gl-eb/minimal-doc
 ```
