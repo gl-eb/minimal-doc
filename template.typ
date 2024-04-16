@@ -170,6 +170,11 @@
   toc: false,
   doc,
 ) = {
+  // parse arguments
+  if not titleinheader {
+    titleinheader = false
+  }
+
   // if header is unset so far, start assembling it
   if header == none {
     // if title is specified, add it to the header
@@ -292,9 +297,10 @@
       affiliation: [],
       email: [] ),
     ),
-  date: [April 15, 2024],
+  date: [April 16, 2024],
   lang: "en",
   version: "0.2.1",
+  titleinheader: false,
   authorsinheader: true,
   margin: (bottom: 30mm,top: 20mm,x: 20mm,),
   cols: 1,

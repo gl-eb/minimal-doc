@@ -19,6 +19,11 @@
   toc: false,
   doc,
 ) = {
+  // parse arguments
+  if not titleinheader {
+    titleinheader = false
+  }
+
   // if header is unset so far, start assembling it
   if header == none {
     // if title is specified, add it to the header

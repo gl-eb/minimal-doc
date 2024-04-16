@@ -12,11 +12,6 @@ format:
     keep-typ: true
     titleinheader: false
     authorsinheader: true
-    margin:
-      x: 20mm
-      top: 20mm
-      bottom: 30mm
-    paper: a4
 ---
 
 ## Introduction

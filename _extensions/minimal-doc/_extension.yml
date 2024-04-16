@@ -8,4 +8,11 @@ contributes:
       template-partials:
         - typst-template.typ
         - typst-show.typ
+      paper: a4
+      margin:
+        x: 20mm
+        top: 20mm
+        bottom: 30mm
+      titleinheader: true
+      authorsinheader: false
 

@@ -38,12 +38,8 @@ $endif$
 $if(header)$
   header: "$header$",
 $endif$
-$if(titleinheader)$
   titleinheader: $titleinheader$,
-$endif$
-$if(authorsinheader)$
   authorsinheader: $authorsinheader$,
-$endif$
 $if(margin)$
   margin: ($for(margin/pairs)$$margin.key$: $margin.value$,$endfor$),
 $endif$
