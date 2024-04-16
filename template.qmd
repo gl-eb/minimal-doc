@@ -10,8 +10,8 @@ lang: en
 format:
   minimal-doc-typst:
     keep-typ: true
-    titleinheader: false
-    authorsinheader: true
+    titleinheader: true
+    authorsinheader: false
 ---
 
 ## Introduction
