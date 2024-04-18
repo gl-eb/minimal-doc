@@ -85,6 +85,11 @@
            font: font,
            size: fontsize)
   set heading(numbering: sectionnumbering)
+  set table(
+    inset: 6pt,
+    stroke: none
+  )
+  show figure: set block(breakable: true)
 
   if title != none {
     align(center)[#block(inset: 1em)[
