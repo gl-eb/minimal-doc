@@ -92,9 +92,9 @@
   show figure: set block(breakable: true)
 
   if title != none {
-    align(center)[#block(inset: 1em)[
+    align(center)[
       #text(weight: "bold", size: 1.5em)[#title]
-    ]]
+    ]
 
     if subtitle != none {
       align(center)[
