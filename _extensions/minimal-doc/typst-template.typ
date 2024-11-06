@@ -93,27 +93,27 @@
 
   if title != none {
     align(center)[
-      #text(weight: "bold", size: 1.5em)[#title]
+      #block(inset: 1em)[
+        #text(weight: "bold", size: 1.5em)[#title]
+        #if subtitle != none {
+          v(0em)
+          text(subtitle, weight: "semibold", size: 1.25em)
+        }
+        #if authors != none {
+          let list_authors = ()
+          for author in authors {
+            list_authors.push(author.name)
+          }
+          v(0em)
+          list_authors.join(", ", last: " and ")
+        }
+        #if date != none {
+          v(0em)
+          date
+        }
+      ]
     ]
 
-    if subtitle != none {
-      align(center)[
-        #text(weight: "bold", size: 1.25em)[#subtitle]
-      ]
-    }
-
-    if authors != none {
-      let list_authors = ()
-      for author in authors {
-        list_authors.push(author.name)
-      }
-      list_authors = list_authors.join(", ", last: " and ")
-      align(center)[#list_authors]
-    }
-
-    if date != none {
-      align(center)[#date]
-    }
 
     if abstract != none {
       block(inset: 2em)[
