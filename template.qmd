@@ -4,11 +4,12 @@ subtitle: "v{{< meta version >}}"
 authors: Gleb Ebert
 date: today
 date-format: long
-version: 0.5.0
+version: 0.6.0
 lang: en
 
 format:
   minimal-doc-typst:
+    title-only: false
     titleinheader: true
     authorsinheader: false
 ---
