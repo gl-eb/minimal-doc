@@ -1,6 +1,6 @@
 # Changelog
 
-## development version
+## 0.6.0
 
 - Add option to only show title in title block (i.e. no subtitle, authors, or date)
 - Introduce changes made to template files in `quarto-cli` (up to v1.8.17)
