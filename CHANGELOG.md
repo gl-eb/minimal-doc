@@ -3,6 +3,11 @@
 ## development version
 
 - Add option to only show title in title block (i.e. no subtitle, authors, or date)
+- Introduce changes made to template files in `quarto-cli` (up to v1.8.17)
+  - Allow styling headings
+  - Allow styling table of contents
+  - Allow setting abstract title
+  - Allow changing page numbering
 
 ## 0.5.0
 

@@ -4,6 +4,7 @@
   authors: none,
   date: none,
   abstract: none,
+  abstract-title: none,
   version: none,
   header: none,
   title-only: false,
@@ -14,10 +15,21 @@
   paper: "a4",
   lang: "en",
   region: "UK",
-  font: (),
+  font: "libertinus serif",
   fontsize: 10pt,
+  title-size: 1.5em,
+  subtitle-size: 1.25em,
+  heading-family: "libertinus serif",
+  heading-weight: "bold",
+  heading-style: "normal",
+  heading-color: black,
+  heading-line-height: 0.65em,
   sectionnumbering: none,
+  pagenumbering: "1",
   toc: false,
+  toc_title: none,
+  toc_depth: none,
+  toc_indent: 1.5em,
   doc,
 ) = {
   // parse arguments
@@ -73,7 +85,7 @@
   set page(
     paper: paper,
     margin: margin,
-    numbering: "1",
+    numbering: pagenumbering,
     header: align(right)[
       #set text(9pt)
       #header
@@ -95,23 +107,36 @@
   if title != none {
     align(center)[
       #block(inset: 1em)[
-        #text(weight: "bold", size: 1.5em)[#title]
+        #set par(leading: heading-line-height)
+        #if (heading-family != none
+            or heading-weight != "bold"
+            or heading-style != "normal"
+            or heading-color != black) {
+          set text(font: heading-family, weight: heading-weight, style: heading-style, fill: heading-color)
+          text(size: title-size)[#title]
+          if subtitle != none {
+            parbreak()
+            text(size: subtitle-size)[#subtitle]
+          }
+        } else {
+          text(weight: "bold", size: title-size)[#title]
+          if title-only == false and subtitle != none {
+            parbreak()
+            text(weight: "semibold", size: subtitle-size)[#subtitle]
+          }
+        }
 
         #if title-only == false {
-          if subtitle != none {
-            v(0em)
-            text(subtitle, weight: "semibold", size: 1.25em)
-          }
           if authors != none {
             let list_authors = ()
             for author in authors {
               list_authors.push(author.name)
             }
-            v(0em)
+            parbreak()
             list_authors.join(", ", last: " and ")
           }
           if date != none {
-            v(0em)
+            parbreak()
             date
           }
         }
@@ -121,15 +146,21 @@
 
     if abstract != none {
       block(inset: 2em)[
-      #text(weight: "semibold")[Abstract] #h(1em) #abstract
+      #text(weight: "semibold")[#abstract-title] #h(1em) #abstract
       ]
     }
 
     if toc {
+      let title = if toc_title == none {
+        auto
+      } else {
+        toc_title
+      }
       block(above: 0em, below: 2em)[
       #outline(
-        title: auto,
-        depth: none
+        title: toc_title,
+        depth: toc_depth,
+        indent: toc_indent
       );
       ]
     }
