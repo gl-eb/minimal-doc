@@ -9,6 +9,7 @@ lang: en
 
 format:
   minimal-doc-typst:
+    title-only: false
     titleinheader: true
     authorsinheader: false
 ---

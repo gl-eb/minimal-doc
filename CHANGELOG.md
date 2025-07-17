@@ -1,5 +1,9 @@
 # Changelog
 
+## development version
+
+- Add option to only show title in title block (i.e. no subtitle, authors, or date)
+
 ## 0.5.0
 
 - Slightly restyle title block to make it more compact

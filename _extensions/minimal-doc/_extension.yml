@@ -13,5 +13,6 @@ contributes:
         x: 20mm
         top: 20mm
         bottom: 30mm
+      title-only: false
       titleinheader: true
       authorsinheader: false

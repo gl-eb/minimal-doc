@@ -38,6 +38,7 @@ $endif$
 $if(header)$
   header: "$header$",
 $endif$
+  title-only: $title-only$,
   titleinheader: $titleinheader$,
   authorsinheader: $authorsinheader$,
 $if(margin)$

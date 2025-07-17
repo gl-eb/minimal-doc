@@ -6,6 +6,7 @@
   abstract: none,
   version: none,
   header: none,
+  title-only: false,
   titleinheader: true,
   authorsinheader: false,
   cols: 1,
@@ -95,21 +96,24 @@
     align(center)[
       #block(inset: 1em)[
         #text(weight: "bold", size: 1.5em)[#title]
-        #if subtitle != none {
-          v(0em)
-          text(subtitle, weight: "semibold", size: 1.25em)
-        }
-        #if authors != none {
-          let list_authors = ()
-          for author in authors {
-            list_authors.push(author.name)
+
+        #if title-only == false {
+          if subtitle != none {
+            v(0em)
+            text(subtitle, weight: "semibold", size: 1.25em)
           }
-          v(0em)
-          list_authors.join(", ", last: " and ")
-        }
-        #if date != none {
-          v(0em)
-          date
+          if authors != none {
+            let list_authors = ()
+            for author in authors {
+              list_authors.push(author.name)
+            }
+            v(0em)
+            list_authors.join(", ", last: " and ")
+          }
+          if date != none {
+            v(0em)
+            date
+          }
         }
       ]
     ]
