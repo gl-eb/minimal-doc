@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.6.1
+
+- Fix subtitle logic if `title-only: yes`
+
 ## 0.6.0
 
 - Add option to only show title in title block (i.e. no subtitle, authors, or date)
