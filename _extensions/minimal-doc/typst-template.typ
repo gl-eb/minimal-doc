@@ -114,19 +114,19 @@
             or heading-color != black) {
           set text(font: heading-family, weight: heading-weight, style: heading-style, fill: heading-color)
           text(size: title-size)[#title]
-          if subtitle != none {
+          if not title-only and subtitle != none {
             parbreak()
             text(size: subtitle-size)[#subtitle]
           }
         } else {
           text(weight: "bold", size: title-size)[#title]
-          if title-only == false and subtitle != none {
+          if not title-only and subtitle != none {
             parbreak()
             text(weight: "semibold", size: subtitle-size)[#subtitle]
           }
         }
 
-        #if title-only == false {
+        #if not title-only {
           if authors != none {
             let list_authors = ()
             for author in authors {
