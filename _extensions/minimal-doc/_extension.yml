@@ -13,6 +13,9 @@ contributes:
         x: 20mm
         top: 20mm
         bottom: 30mm
+      crossref:
+        sec-prefix: §
+      citeproc: true
       title-only: false
       titleinheader: true
       authorsinheader: false

@@ -1,5 +1,10 @@
 # Changelog
 
+## development version
+
+- Use citeproc for citations
+- Use custom prefix when crossreferencing sections
+
 ## 0.6.1
 
 - Fix subtitle logic if `title-only: yes`
