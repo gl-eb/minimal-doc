@@ -19,7 +19,7 @@
   fontsize: 10pt,
   title-size: 1.5em,
   subtitle-size: 1.25em,
-  heading-family: "libertinus serif",
+  heading-family: none,
   heading-weight: "bold",
   heading-style: "normal",
   heading-color: black,
@@ -119,10 +119,10 @@
             text(size: subtitle-size)[#subtitle]
           }
         } else {
-          text(weight: "bold", size: title-size)[#title]
+          text(font: font, weight: "bold", size: title-size)[#title]
           if not title-only and subtitle != none {
             parbreak()
-            text(weight: "semibold", size: subtitle-size)[#subtitle]
+            text(font: font, weight: "semibold", size: subtitle-size)[#subtitle]
           }
         }
 

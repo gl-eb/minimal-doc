@@ -4,6 +4,7 @@
 
 - Use citeproc for citations
 - Use custom prefix when crossreferencing sections
+- Use mainfont for title unless set otherwise in brand.yml
 
 ## 0.6.1
 
